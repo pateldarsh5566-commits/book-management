@@ -22,8 +22,8 @@
                 <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Books</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Cart</a></li>
-                <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="registration.php">Register</a></li>
+                <li class="nav-item"><a class="nav-link" href="user_login.php">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="user_registration.php">Register</a></li>
             </ul>
         </div>
     </div>
