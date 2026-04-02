@@ -92,7 +92,7 @@ if(isset($_POST['register'])){
                 <input type="password" name="compassword" class="form-control" required>
                 <span class="error"><?php echo $compasswordErr; ?></span>
             </div>
-            <button type="submit" name="register" class="btn btn-primary w-100">Register</button>
+            <input type="submit" name="register" class="btn btn-primary w-100" value="Register">
         </form>
     </div>
 </body>
