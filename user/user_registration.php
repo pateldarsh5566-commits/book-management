@@ -1,8 +1,6 @@
 <?php
 include("../config/db_connection.php");
 $emailErr = $nameErr = $passwordErr = $compasswordErr = $mobileErr = "";
-
-// Initialize variables so they don't cause errors in the HTML value attributes
 $name = $mobile = $email = "";
 
 if(isset($_POST['register'])){
@@ -12,7 +10,6 @@ if(isset($_POST['register'])){
     $password = $_POST['password'];
     $compassword = $_POST['compassword'];
 
-    // Added a space \s so users can type their full name (e.g. "John Doe")
     if (!preg_match("/^[a-zA-Z\s]*$/", $name)){
         $nameErr = "Only letters and spaces allowed";
     }
@@ -34,15 +31,13 @@ if(isset($_POST['register'])){
 
     if (empty($emailErr) && empty($nameErr) && empty($passwordErr) && empty($compasswordErr) && empty($mobileErr)){
         
-        // FIX 1: Changed $query to $sql so it matches the execution line below
-        // FIX 2: Added password_hash() for security (never store plain text passwords)
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
         
         $sql = "INSERT INTO users(name, email, password, mobile) VALUES('$name', '$email', '$hashed_password', '$mobile')";
         
         if($conn->query($sql) === TRUE){
             header("Location: user_login.php");
-            exit(); // Always use exit after header redirect
+            exit();
         } else {
             echo "<div class='alert alert-danger text-center'>Error: " . $sql . "<br>" . $conn->error . "</div>";
         }
@@ -57,7 +52,6 @@ if(isset($_POST['register'])){
     <title>User Registration</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Ensures the form is actually centered vertically on the screen */
         body { height: 100vh; background-color: #f4f6f9; }
         .error { color: red; font-size: 0.85em; }
     </style>

@@ -5,26 +5,20 @@ include("../config/db_connection.php");
 if(isset($_POST['login'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
-
-    // SECURITY: Use prepared statements to prevent SQL Injection hackers
-    // We only search for the EMAIL first. We don't check the password in the SQL query.
     $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
 
-    // Check if a user with that email exists
     if($result->num_rows > 0){
         
-        // Fetch the user's data from the database
         $user = $result->fetch_assoc();
         
-        // Use password_verify to check if the typed password matches the hashed password in the DB
+        
         if(password_verify($password, $user['password'])){
             
-            // Success! Create session variables
             $_SESSION['email'] = $user['email'];
-            $_SESSION['name'] = $user['name']; // Good idea to store their name too!
+            $_SESSION['name'] = $user['name']; 
             
             header("Location: dashboard.php");
             exit();
@@ -46,7 +40,6 @@ if(isset($_POST['login'])){
     <title>User Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* FIX: Added 100vh so the form actually centers vertically in the middle of the screen */
         body {
             height: 100vh;
             background-color: #f8f9fa;
