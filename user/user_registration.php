@@ -66,27 +66,33 @@ if(isset($_POST['register'])){
                 <input type="text" name="name" class="form-control" value="<?php echo $name; ?>" required>
                 <span class="error"><?php echo $nameErr; ?></span>
             </div>
+
             <div class="mb-3">
                 <label class="form-label">Email</label>
                 <input type="email" name="email" class="form-control" value="<?php echo $email; ?>" required>
                 <span class="error"><?php echo $emailErr; ?></span>
             </div>
+
             <div class="mb-3">
                 <label class="form-label">Mobile</label>
                 <input type="number" name="mobile" class="form-control" value="<?php echo $mobile; ?>" required>
                 <span class="error"><?php echo $mobileErr; ?></span>
             </div>
+
             <div class="mb-3">
                 <label class="form-label">Password</label>
                 <input type="password" name="password" class="form-control" required>
                 <span class="error"><?php echo $passwordErr; ?></span>
             </div>
+
             <div class="mb-3">
                 <label class="form-label">Confirm Password</label>
                 <input type="password" name="compassword" class="form-control" required>
                 <span class="error"><?php echo $compasswordErr; ?></span>
             </div>
+
             <input type="submit" name="register" class="btn btn-primary w-100" value="Register">
+            
         </form>
     </div>
 </body>
