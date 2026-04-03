@@ -74,7 +74,7 @@ if(isset($_POST['register'])){
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Mobile</label>
+                <label class="form-label">Mobile Number</label>
                 <input type="number" name="mobile" class="form-control" value="<?php echo $mobile; ?>" required>
                 <span class="error"><?php echo $mobileErr; ?></span>
             </div>
@@ -92,7 +92,7 @@ if(isset($_POST['register'])){
             </div>
 
             <input type="submit" name="register" class="btn btn-primary w-100" value="Register">
-            
+
         </form>
     </div>
 </body>
