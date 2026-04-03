@@ -30,7 +30,7 @@
 <div class="hero">
     <div class="text-center">
         <h1>Welcome to BookStore</h1>
-        <p>Discover your next favorite book</p>
+        <p>Discover your next favorite books</p>
         <a href="#" class="btn btn-warning">Shop Now</a>
     </div>
 </div>
