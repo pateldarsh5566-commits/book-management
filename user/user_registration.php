@@ -81,6 +81,7 @@ if(isset($_POST['register'])){
 
             <div class="mb-3">
                 <label class="form-label">Password</label>
+                
                 <input type="password" name="password" class="form-control" required>
                 <span class="error"><?php echo $passwordErr; ?></span>
             </div>
